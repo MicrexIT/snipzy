@@ -20,12 +20,13 @@ defmodule SnipzyWeb.Router do
   scope "/", SnipzyWeb do
     pipe_through :browser
 
-    live "/", PageLive, :index
+
   end
 
   scope "/", SnipzyWeb do
     pipe_through [:browser, :require_authenticated_user]
 
+    live "/", SnippetLive.All, :index
     live "/snippets", SnippetLive.Index, :index
     live "/snippets/new", SnippetLive.Index, :new
     live "/snippets/:id/edit", SnippetLive.Index, :edit

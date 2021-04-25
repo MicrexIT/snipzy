@@ -1,15 +1,3 @@
-<h1>Your Snippets</h1>
-
-<%= if @live_action in [:new, :edit] do %>
-  <%= live_modal @socket, SnipzyWeb.SnippetLive.FormComponent,
-    id: @snippet.id || :new,
-    title: @page_title,
-    action: @live_action,
-    snippet: @snippet,
-    user: @user,
-    return_to: Routes.snippet_index_path(@socket, :index) %>
-<% end %>
-
 <table>
   <thead>
     <tr>
@@ -38,5 +26,3 @@
     <% end %>
   </tbody>
 </table>
-
-<span><%= live_patch "New Snippet", to: Routes.snippet_index_path(@socket, :new) %></span>

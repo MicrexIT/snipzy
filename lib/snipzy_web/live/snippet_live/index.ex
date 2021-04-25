@@ -9,7 +9,6 @@ defmodule SnipzyWeb.SnippetLive.Index do
   def mount(_params, session, socket) do
     # TODO: you could only pass the user_token at this point
     user = Accounts.get_user_by_session_token(session["user_token"])
-
     {:ok,
      socket
      |> assign(:snippets, list_snippets(user.id))
@@ -42,7 +41,7 @@ defmodule SnipzyWeb.SnippetLive.Index do
 
   defp apply_action(socket, :index, _params) do
     socket
-    |> assign(:page_title, "Listing Snippets")
+    |> assign(:page_title, "Your snippets")
     |> assign(:snippet, nil)
   end
 
