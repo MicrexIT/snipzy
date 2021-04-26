@@ -14,12 +14,18 @@
       </div>
     <% end %>
     <div class="rounded-md shadow-sm -space-y-px">
-      <%= label f, :email, class: "" %>
-      <%= email_input f, :email, required: true, class: "appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" %>
-      <%= error_tag f, :email %>
+      <div>
+        <%= label f, :email, class: "" %>
+        <div class="my-4">
+          <%= email_input f, :email, required: true, class: "appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" %>
+        </div>
+        <%= error_tag f, :email %>
+      </div>
       <div>
         <%= label f, :password, class: "" %>
-        <%= password_input f, :password, required: true, class: "appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" %>
+        <div class="my-4">
+          <%= password_input f, :password, required: true, class: "appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" %>
+        </div>
         <%= error_tag f, :password %>
       </div>
     </div>

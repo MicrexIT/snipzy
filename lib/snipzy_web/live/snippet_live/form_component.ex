@@ -42,6 +42,7 @@ defmodule SnipzyWeb.SnippetLive.FormComponent do
 
   defp save_snippet(socket, :new, snippet_params) do
     user = socket.assigns.user
+
     case Snippets.create_snippet(user, snippet_params) do
       {:ok, _snippet} ->
         {:noreply,

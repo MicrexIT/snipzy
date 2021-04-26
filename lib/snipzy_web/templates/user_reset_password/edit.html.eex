@@ -14,12 +14,16 @@
       <div class="rounded-md shadow-sm -space-y-px">
         <div>
           <%= label f, :password, "New password" %>
-          <%= password_input f, :password, required: true, class: "appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" %>
+          <div class="my-4">
+            <%= password_input f, :password, required: true, class: "appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" %>
+          </div>
           <%= error_tag f, :password %>
         </div>
         <div>
           <%= label f, :password_confirmation, "Confirm new password" %>
-          <%= password_input f, :password_confirmation, required: true, class: "appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" %>
+          <div class="my-4">
+            <%= password_input f, :password_confirmation, required: true, class: "appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" %>
+          </div>
           <%= error_tag f, :password_confirmation %>
         </div>
       </div>

@@ -16,9 +16,10 @@ defmodule Snipzy.Snippets.Search do
     end
   end
 
-  def get_query(sentence) do
+  def get_user_query(sentence, user) do
     Snippet
-    |> where([r], fragment("? @@ ?", r.tsv, plainto_tsquery(^sentence)))
-    |> order_by([r], desc: ts_rank_cd(r.tsv, plainto_tsquery(^sentence)))
+    |> where([snippet], snippet.user_id == ^user.id)
+    |> where([snippet], fragment("? @@ ?", snippet.tsv, plainto_tsquery(^sentence)))
+    |> order_by([snippet], desc: ts_rank_cd(snippet.tsv, plainto_tsquery(^sentence)))
   end
 end

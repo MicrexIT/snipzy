@@ -37,9 +37,9 @@ defmodule Snipzy.Snippets do
     |> Repo.all()
   end
 
-  def search_all_snippets(sentence) do
+  def search_user_snippets(sentence, user) do
     sentence
-    |> Search.get_query()
+    |> Search.get_user_query(user)
     |> IO.inspect()
     |> Repo.all()
   end
