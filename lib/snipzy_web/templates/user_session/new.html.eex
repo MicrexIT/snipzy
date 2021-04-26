@@ -28,8 +28,13 @@
           <%= checkbox f, :remember_me, class: "h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded" %>
           <%= label f, :remember_me, "Remember me", class: "ml-2 block text-sm text-gray-900" %>
         </div>
-        <div class="text-sm">
-          <%= link "Forgot your password?", to: Routes.user_reset_password_path(@conn, :new), class: "font-medium text-indigo-600 hover:text-indigo-500" %>
+        <div class="flex space-x-2">
+          <div class="text-sm">
+            <%= link "Register", to: Routes.user_registration_path(@conn, :new),  class: "font-medium text-indigo-600 hover:text-indigo-500"  %>
+          </div>
+          <div class="text-sm">
+            <%= link "Forgot your password?", to: Routes.user_reset_password_path(@conn, :new), class: "font-medium text-indigo-600 hover:text-indigo-500" %>
+          </div>
         </div>
       </div>
       <div>

@@ -39,7 +39,7 @@
             <%= link "All Snippets", to: Routes.snippet_all_path(@conn, :index) %>
           </div>
           <div :class="tab.includes('snippets') ? 'border-indigo-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium' : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium'" >
-            <%= link "Snippets", to: Routes.snippet_index_path(@conn, :index) %>
+            <%= link "Your Snippets", to: Routes.snippet_index_path(@conn, :index) %>
           </div>
         </div>
       </div>
