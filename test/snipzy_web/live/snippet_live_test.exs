@@ -5,8 +5,18 @@ defmodule SnipzyWeb.SnippetLiveTest do
 
   alias Snipzy.Snippets
 
-  @create_attrs %{code: "some code", description: "some description", language: "some language", title: "some title"}
-  @update_attrs %{code: "some updated code", description: "some updated description", language: "some updated language", title: "some updated title"}
+  @create_attrs %{
+    code: "some code",
+    description: "some description",
+    language: "some language",
+    title: "some title"
+  }
+  @update_attrs %{
+    code: "some updated code",
+    description: "some updated description",
+    language: "some updated language",
+    title: "some updated title"
+  }
   @invalid_attrs %{code: nil, description: nil, language: nil, title: nil}
 
   defp fixture(:snippet) do

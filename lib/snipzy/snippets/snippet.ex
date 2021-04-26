@@ -24,5 +24,4 @@ defmodule Snipzy.Snippets.Snippet do
   def query_users_snippets(user_id) do
     from s in Snippet, where: s.user_id == ^user_id
   end
-
 end

@@ -6,7 +6,7 @@ defmodule Snipzy.Snippets do
   import Ecto.Query, warn: false
   alias Snipzy.Repo
 
-  alias Snipzy.Snippets.Snippet
+  alias Snipzy.Snippets.{Snippet, Search}
   alias Snipzy.Accounts
 
   @doc """
@@ -34,6 +34,13 @@ defmodule Snipzy.Snippets do
   def list_user_snippets(user_id) do
     user_id
     |> Snippet.query_users_snippets()
+    |> Repo.all()
+  end
+
+  def search_user_snippets(sentence, user) do
+    sentence
+    |> Search.get_user_query(user)
+    |> IO.inspect()
     |> Repo.all()
   end
 

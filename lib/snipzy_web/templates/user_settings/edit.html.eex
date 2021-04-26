@@ -14,14 +14,14 @@
         <%= hidden_input f, :action, name: "action", value: "update_email" %>
         <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
           <%= label f, :email, class: "block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2" %>
-          <div class="mt-1 sm:mt-0 sm:col-span-2">
+          <div class="my-4 sm:col-span-2">
             <%= email_input f, :email, required: true, class: "block max-w-lg w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm border-gray-300 rounded-md" %>
           </div>
           <%= error_tag f, :email %>
         </div>
         <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
           <%= label f, :current_password, for: "current_password_for_email", class: "block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2" %>
-          <div class="mt-1 sm:mt-0 sm:col-span-2">
+          <div class="my-4 sm:col-span-2">
             <%= password_input f, :current_password, required: true, name: "current_password", id: "current_password_for_email", class: "block max-w-lg w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm border-gray-300 rounded-md" %>
           </div>
           <%= error_tag f, :current_password %>
@@ -46,21 +46,21 @@
       <%= hidden_input f, :action, name: "action", value: "update_password" %>
       <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
         <%= label f, :password, "New password", class: "block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2" %>
-        <div class="mt-1 sm:mt-0 sm:col-span-2">
+        <div class="my-4 sm:col-span-2">
           <%= password_input f, :password, required: true, class: "block max-w-lg w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm border-gray-300 rounded-md" %>
         </div>
         <%= error_tag f, :password %>
       </div>
       <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
         <%= label f, :password_confirmation, "Confirm new password", class: "block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2"  %>
-        <div class="mt-1 sm:mt-0 sm:col-span-2">
+        <div class="my-4 sm:col-span-2">
           <%= password_input f, :password_confirmation, required: true, class: "block max-w-lg w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm border-gray-300 rounded-md" %>
         </div>
         <%= error_tag f, :password_confirmation %>
       </div>
       <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
         <%= label f, :current_password, for: "current_password_for_password", class: "block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2"  %>
-        <div class="mt-1 sm:mt-0 sm:col-span-2">
+        <div class="my-4 sm:col-span-2">
           <%= password_input f, :current_password, required: true, name: "current_password", id: "current_password_for_password", class: "block max-w-lg w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm border-gray-300 rounded-md" %>
         </div>
         <%= error_tag f, :current_password %>
