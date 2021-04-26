@@ -6,25 +6,6 @@
 
 @import "../node_modules/nprogress/nprogress.css";
 
-code {
-  display: block;
-  height: 100%;
-  width: 100%;
-  margin: 4px 2px;
-  padding: 0;
-}
-
-
-.input-editor {
-  width: 100%;
-  background: transparent;
-  height: 100%;
-  min-height: 200px;
-  margin: 0;
-  padding: 0;
-  border: none;
-  // outline: none;
- }
 /* LiveView specific classes for your customizations */
 .phx-no-feedback.invalid-feedback,
 .phx-no-feedback .invalid-feedback {
