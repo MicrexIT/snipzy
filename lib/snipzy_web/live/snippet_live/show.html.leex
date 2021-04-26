@@ -1,33 +1,61 @@
-<h1>Show Snippet</h1>
-<%= if @live_action in [:edit] do %>
-  <%= live_modal @socket, SnipzyWeb.SnippetLive.FormComponent,
+<header>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h1 class="text-3xl font-bold leading-tight text-gray-900">
+      Your Snippets
+    </h1>
+    <h3 class="mt-2 capitalize">
+      <span class="text-gray-600"> Selected </span>: <%= @snippet.title %> </h3>
+  </div>
+</header>
+<div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+  <div class="pb-5 border-b border-gray-200 sm:flex sm:items-center sm:justify-center md:justify-end">
+    <div class="mt-3 my-1 sm:mt-0 sm:ml-4 flex flex-row justify-end">
+      <%= live_redirect "Back", to: Routes.snippet_index_path(@socket, :index), class: "mr-2 inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" %>
+      <%= live_patch "Edit", to: Routes.snippet_show_path(@socket, :edit, @snippet), class: "mr-2 inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" %>
+    </div>
+  </div>
+  <div class="mt-5 border-gray-200">
+    <dl class="sm:divide-y sm:divide-gray-200">
+      <%= if @live_action in [:edit] do %>
+        <%= live_modal @socket, SnipzyWeb.SnippetLive.FormComponent,
     id: @snippet.id,
     title: @page_title,
     action: @live_action,
     snippet: @snippet,
     return_to: Routes.snippet_show_path(@socket, :show, @snippet) %>
-<% end %>
-<ul>
-  <li>
-    <strong>Code:</strong>
-    <pre>
-  <code>
-    <%= @snippet.code %>
-  </code>
-  </pre>
-  </li>
-  <li>
-    <strong>Description:</strong>
-    <%= @snippet.description %>
-  </li>
-  <li>
-    <strong>Title:</strong>
-    <%= @snippet.title %>
-  </li>
-  <li>
-    <strong>Language:</strong>
-    <%= @snippet.language %>
-  </li>
-</ul>
-<span><%= live_patch "Edit", to: Routes.snippet_show_path(@socket, :edit, @snippet), class: "button" %></span>
-<span><%= live_redirect "Back", to: Routes.snippet_index_path(@socket, :index) %></span>
+      <% end %>
+      <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4">
+        <dt class="text-sm font-medium text-gray-500">
+          Title
+        </dt>
+        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+          <%= @snippet.title %>
+        </dd>
+      </div>
+      <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4">
+        <dt class="text-sm font-medium text-gray-500">
+          Code
+        </dt>
+        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+          <%= @snippet.code %>
+        </dd>
+      </div>
+      <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4">
+        <dt class="text-sm font-medium text-gray-500">
+          Description
+        </dt>
+        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+          <%= @snippet.description %>
+        </dd>
+      </div>
+      <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4">
+        <dt class="text-sm font-medium text-gray-500">
+          Language
+        </dt>
+        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+          <%= @snippet.language %>
+        </dd>
+      </div>
+    </dl>
+  </div>
+</div>
