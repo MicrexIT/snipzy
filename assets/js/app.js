@@ -17,9 +17,12 @@ import "phoenix_html"
 import {Socket} from "phoenix"
 import NProgress from "nprogress"
 import {LiveSocket} from "phoenix_live_view"
+import hooks from './hooks'
+
 
 let csrfToken = document.querySelector("meta[name='csrf-token']").getAttribute("content")
 let liveSocket = new LiveSocket("/live", Socket, {
+    hooks: hooks,
     dom: {
       onBeforeElUpdated(from, to) {
         if (from.__x) {

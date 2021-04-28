@@ -19,6 +19,7 @@ defmodule SnipzyWeb.Router do
 
   scope "/", SnipzyWeb do
     pipe_through :browser
+    live "/editor", PageLive, :index
   end
 
   scope "/", SnipzyWeb do

@@ -1,0 +1,7 @@
+#ace-editor {
+  @apply w-full h-full text-lg overflow-hidden min-h-200;
+}
+
+#editor {
+    @apply flex flex-col p-2 mx-auto;
+}

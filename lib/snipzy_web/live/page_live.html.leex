@@ -5,10 +5,9 @@
       <span class="block">Snipzy?</span>
       <span class="block">Your safe space for snippets</span>
     </h2>
-    <div class="mt-8 flex justify-center">
-      <div class="inline-flex rounded-md shadow">
-        <%= link "Register", to: Routes.user_registration_path(@conn, :new), class: "inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700" %>
-      </div>
+    <div>
+       <%= live_component(@socket, SnippetEditor, id: "editor") %>
+       <button phx-click="show" phx-target="#editor">Open</button>
     </div>
   </div>
 </div>
