@@ -20,4 +20,4 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
   
   - Authentication generated with [phx_gen_auth](https://github.com/aaronrenner/phx_gen_auth)
   - CRUD operations on snippet (scoped to current user)
-  - Search snippet by title (accounts for caps letter and finds a word a a title)
+  - Search snippet by exact title (caps are ignored)
