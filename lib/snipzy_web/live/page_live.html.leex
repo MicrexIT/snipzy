@@ -8,6 +8,7 @@
     <div>
        <%= live_component(@socket, SnippetEditor, id: "editor") %>
        <button phx-click="show" phx-target="#editor">Open</button>
+       <button phx-click="save" phx-target="#editor">Save</button>
     </div>
   </div>
 </div>

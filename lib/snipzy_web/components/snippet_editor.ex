@@ -2,21 +2,24 @@ defmodule SnipzyWeb.Components.SnippetEditor do
   use Phoenix.LiveComponent
 
   def mount(socket) do
-    {:ok, assign(socket, show: false)}
+    IO.inspect(socket)
+    {:ok, socket |> assign(show: false) |> assign(code: "bo")}
   end
 
   def render(assigns) do
     ~L"""
     <div id='editor' phx-update="ignore" phx-hook="editor">
       <div>
-        <div id="ace-editor"></div>
-    </div>
+        <div data-value="<%= @code %>" id="ace-editor"></div>
+      </div>
       </div>
     """
   end
 
   # Public API
 
+  #TODO: we target directly #editor so that we are not actually calling this function
+  # CURRENTLY NOT USING IT
   def show(editor_id) do
     send_update(__MODULE__, id: editor_id, show: true)
   end
