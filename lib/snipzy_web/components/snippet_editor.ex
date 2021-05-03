@@ -18,14 +18,13 @@ defmodule SnipzyWeb.Components.SnippetEditor do
 
   # Public API
 
-  #TODO: we target directly #editor so that we are not actually calling this function
+  # TODO: we target directly #editor so that we are not actually calling this function
   # CURRENTLY NOT USING IT
   def show(editor_id) do
     send_update(__MODULE__, id: editor_id, show: true)
   end
 
   # Event handlers
-
   def handle_event("show", _, socket) do
     {:noreply, assign(socket, show: true)}
   end

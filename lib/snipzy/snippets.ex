@@ -7,7 +7,6 @@ defmodule Snipzy.Snippets do
   alias Snipzy.Repo
 
   alias Snipzy.Snippets.{Snippet, Search}
-  alias Snipzy.Accounts
 
   @doc """
   Returns the list of snippets.
@@ -65,25 +64,20 @@ defmodule Snipzy.Snippets do
 
   ## Examples
 
-      iex> create_snippet(%{field: value})
+      iex> create_snippet(%User{}, %{field: value})
       {:ok, %Snippet{}}
 
-      iex> create_snippet(%{field: bad_value})
+      iex> create_snippet(%User{}, %{field: bad_value})
       {:error, %Ecto.Changeset{}}
 
   """
   def create_snippet(user, attrs \\ %{}) do
-    IO.inspect(attrs)
-    %Snippet{} |> Snippet.changeset(attrs) |> Repo.insert()
+    # %Snippet{} |> Snippet.changeset(attrs) |> Repo.insert()
 
     user
     |> Ecto.build_assoc(:snippets, %{})
     |> Snippet.changeset(attrs)
     |> Repo.insert()
-
-    # snippet = Ecto.build_assoc(user, :snippets, snippet)
-    # IO.inspect(snippet)
-    # Repo.insert(snippet)
   end
 
   @doc """
